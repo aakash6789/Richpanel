@@ -22,12 +22,12 @@ const generateAccessAndRefreshToken=async(userId)=>{
 }
 
 const registerUser=asyncHandler(async(req,res)=>{
-    const {email,username, password}=req.body;
+    const {email,Name, password}=req.body;
     console.log(req.body);
-   if([email,username,password].some((field)=> {return field?.trim()===""})){
+   if([email,Name,password].some((field)=> {return field?.trim()===""})){
     throw new ApiError({statusCode:400,message:"All fields are required"})
    }
-   const existedUser= await User.findOne({$or:[{username},{email}]});
+   const existedUser= await User.findOne({$or:[{Name},{email}]});
    if(existedUser){
          throw new ApiError(409,"User already exists!!");
    }
@@ -35,7 +35,7 @@ const registerUser=asyncHandler(async(req,res)=>{
   const user=await User.create({
     email,
     password,
-    username:username.toLowerCase(),
+    Name,
     refreshToken:""
    });
    const createdUser=await User.findById(user._id).select("-password -refreshToken");
@@ -49,11 +49,11 @@ const registerUser=asyncHandler(async(req,res)=>{
 });
 
 const loginUser=asyncHandler(async(req,res)=>{
-   const {username,email,password}=req.body;
-   if(!username && !email){
-    throw new ApiError(400, "Any one of email or username is required");
+   const {Name,email,password}=req.body;
+   if(!Name && !email){
+    throw new ApiError(400, "Any one of email or name is required");
    }
-   const user=await User.findOne({$or:[{username},{email}]});
+   const user=await User.findOne({$or:[{Name},{email}]});
    if(!user){
     throw new ApiError(404, "User does not exist, try creating an account first");
    }

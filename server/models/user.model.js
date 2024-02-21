@@ -3,11 +3,10 @@ import  bcrypt from "bcrypt";
 import  jwt  from "jsonwebtoken";
 
 const userSchema=new mongoose.Schema({
-    username:{
+    Name:{
         type:String,
         require:true,
         unique:true,
-        lowercase:true,
         trim:true,
         index:true
     }, 
@@ -22,9 +21,6 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String,
         require:[true, "Password is required"]
-    },
-    refreshToken:{
-        type:String,
     }
 },{timestamps:true});
 
@@ -44,8 +40,7 @@ userSchema.methods.generateAccessToken=async function(){
         {
             _id:this._id,
             email:this.email,
-            username:this.username,
-            fullName:this.fullName
+            Name:this.Name
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
