@@ -6,6 +6,7 @@ import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
 import FBPage from './components/FBPage.jsx'
 import Disconnect from './components/Disconnect.jsx'
+import Facebook from './components/Facebook.jsx'
 import {
   RouterProvider,
   NavLink,
@@ -20,12 +21,13 @@ const router = createBrowserRouter(
       <Route
         path=""
         element={
-         <Register/>
+         <Facebook/>
         }
       />
       <Route path="/login" element={<Login />} />
       <Route path="/disconnect" element={<Disconnect/>} />
       <Route path="/connect" element={<FBPage/>} />
+      <Route path='/facebook' element={<Facebook/>}/>
     </Route>
   )
 );
