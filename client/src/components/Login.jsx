@@ -4,52 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const Login = () => {
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     formState: { errors },
-    //   } = useForm();
-
-    //   const onSubmit=(data)=>{
-    //   for(let prop in formData){
-    //    // console.log(prop);
-    //     formData[prop]=data[prop];
-    //     }
-    //    //  console.log(formData);
-    //     callLog();
-    //  }
-
-    //  const callLog=async(req,res)=>{
-    //    const formDataJson=JSON.stringify(formData);
-    //     const savedUserResponse=await fetch(
-    //      `http://localhost:3000/api/v1/users/login`,{
-    //        method:"POST",
-    //        headers:{
-    //          'Content-Type':'application/json'
-    //        },
-    //        credentials:'include',
-    //        body:formDataJson
-    //      }
-    //     ).then(async(res)=>{ 
-    //      // const { token, user } = res.data;
-    //      // console.log(token);
-    //      if(res.status===200){
-    //        const data = await res.json(); // Parse the JSON response
-    //        const token = data.token; // Access the token property from the response data
-  
-    //     //    navigate('/meet');
-    //      }
-    //      else if(res.status===404){
-    //     //    setText("User does not exist");
-    //      }
-    //      else if(res.status===401){
-    //     //    setText("Invalid credentials.");
-    //      }
-         
-    //    })
-    //     .catch(err=>{
-    //       console.log("Error is:",err);
-    //     })
     const [formData, setFormData] = useState({
       email: '',
       password: ''
@@ -62,7 +16,7 @@ const Login = () => {
       e.preventDefault();
       try {
         const response = await axios.post('http://localhost:3000/api/v1/users/login', formData);
-        console.log(response.data); // assuming your backend returns some data upon successful registration
+        console.log(response.data); 
       } catch (error) {
         console.error('Error registering user:', error);
       }

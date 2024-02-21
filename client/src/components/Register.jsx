@@ -17,7 +17,7 @@ const Register = () => {
         e.preventDefault();
         try {
           const response = await axios.post('http://localhost:3000/api/v1/users/register', formData);
-          console.log(response.data); // assuming your backend returns some data upon successful registration
+          console.log(response.data); 
         } catch (error) {
           console.error('Error registering user:', error);
         }
