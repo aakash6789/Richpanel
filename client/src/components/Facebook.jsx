@@ -50,7 +50,7 @@ const Facebook = () => {
       }, []);
   return (
     <div>
-      <div id="fb-root">
+      {/* <div id="fb-root">
       <div className="fb-login-button" 
            data-width="" 
            data-size="" 
@@ -60,7 +60,9 @@ const Facebook = () => {
            data-use-continue-as="false" >
             Login
       </div>
-    </div>
+    </div> */}
+    <div id="fb-root"></div>
+    <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
     </div>
   )
 }
