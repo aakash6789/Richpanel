@@ -16,6 +16,7 @@ const Facebook = () => {
     
             FB.getLoginStatus(function(response) {
               if (response.status === 'connected') {
+                console.log(response);
                 console.log('Logged in.');
                 // User is logged in, fetch user's information
                 FB.api('/me', { fields: 'name, email' }, function(response) {
