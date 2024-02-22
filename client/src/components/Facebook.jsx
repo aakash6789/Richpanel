@@ -59,7 +59,6 @@ const Facebook = () => {
            data-layout="" 
            data-auto-logout-link="false" 
            data-use-continue-as="false" onClick={func1}>
-            Login
       </div>
     </div>
     </div>
