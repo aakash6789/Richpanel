@@ -3,9 +3,10 @@ import React from 'react';
 import { useEffect } from 'react';
 
 const Facebook = () => {
+    let func1;
     useEffect(() => {
         // Load the Facebook SDK asynchronously
-        function loadFacebookSDK() {
+        func1=function loadFacebookSDK() {
           window.fbAsyncInit = function() {
             FB.init({
               appId: '1468165183808821',
@@ -46,7 +47,7 @@ const Facebook = () => {
           }(document, 'script', 'facebook-jssdk'));
         }
     
-        loadFacebookSDK();
+        // loadFacebookSDK();
       }, []);
   return (
     <div>
@@ -57,7 +58,7 @@ const Facebook = () => {
            data-button-type="" 
            data-layout="" 
            data-auto-logout-link="false" 
-           data-use-continue-as="false">
+           data-use-continue-as="false" onClick={func1}>
             Login
       </div>
     </div>
