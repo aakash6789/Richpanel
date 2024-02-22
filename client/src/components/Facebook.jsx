@@ -46,7 +46,7 @@ const Facebook = () => {
           }(document, 'script', 'facebook-jssdk'));
         }
     
-        // loadFacebookSDK();
+        loadFacebookSDK();
       }, []);
   return (
     <div>
