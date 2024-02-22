@@ -52,7 +52,7 @@ const Facebook = () => {
     <div>
       <div id="fb-root"></div>
 <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v19.0&appId=1468165183808821" nonce="itNYlqNw"></script>
-<div className="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<div className="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false">Login with facebook</div>
     </div>
   )
 }
